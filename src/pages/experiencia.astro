@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import ExperienceCard from '../components/ExperienceCard.astro';
+import personalData from '../data/personal.json';
+
+const { experience } = personalData;
+---
+
+<BaseLayout 
+  title="Experiencia Profesional" 
+  description="Historial laboral detallado de Juan Jose Gonzales Centurión, incluyendo logros en Rauletti, Brandlima, Pisonay y Lovandi."
+>
+  <Navbar />
+  
+  <main class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <header class="mb-16 text-center">
+        <h1 class="text-4xl font-extrabold text-gray-900 mb-6">Trayectoria Profesional</h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Resultados medibles y crecimiento estratégico a través de múltiples industrias.
+        </p>
+      </header>
+
+      <div class="space-y-4">
+        {experience.map(exp => (
+          <ExperienceCard {...exp} />
+        ))}
+      </div>
+
+      <!-- Highlights section within experience -->
+       <div class="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="p-8 bg-blue-50 rounded-2xl border border-blue-100">
+            <h3 class="text-blue-900 font-bold mb-2">Lead Gen</h3>
+            <p class="text-3xl font-extrabold text-blue-600">+150%</p>
+            <p class="text-sm text-blue-700 mt-1">Crecimiento de prospectos calificados en sector inmobiliario.</p>
+          </div>
+          <div class="p-8 bg-green-50 rounded-2xl border border-green-100">
+            <h3 class="text-green-900 font-bold mb-2">Facturación</h3>
+            <p class="text-3xl font-extrabold text-green-600">+400%</p>
+            <p class="text-sm text-green-700 mt-1">Incremento en canales digitales para retail de consumo masivo.</p>
+          </div>
+          <div class="p-8 bg-purple-50 rounded-2xl border border-purple-100">
+            <h3 class="text-purple-900 font-bold mb-2">Consultoría</h3>
+            <p class="text-3xl font-extrabold text-purple-600">100%</p>
+            <p class="text-sm text-purple-700 mt-1">Retención y escalamiento de cartera de clientes B2B/B2C.</p>
+          </div>
+       </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>

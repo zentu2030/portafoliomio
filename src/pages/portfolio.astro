@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const projects = [
+  {
+    title: "E-commerce Lovandi Joyería",
+    category: "Desarrollo Web & SEO",
+    description: "Creación de tienda online premium con WordPress + WooCommerce, optimizada para conversión y posicionamiento.",
+    metrics: ["+40% Conversión", "TOP 3 Google"],
+    image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1470&auto=format&fit=crop"
+  },
+  {
+    title: "Campaña Inbound Pisonay",
+    category: "Performance Marketing",
+    description: "Estrategia integral de captación de leads para proyectos inmobiliarios con integración CRM.",
+    metrics: ["+150% Leads", "-50% CPA"],
+    image: "https://images.unsplash.com/photo-1560515234-78c033a768f0?q=80&w=1470&auto=format&fit=crop"
+  },
+  {
+    title: "Estrategia 360 Rauletti",
+    category: "Digital Marketing",
+    description: "Lanzamiento de nuevas plazas y automatización de canales digitales para retail gastronómico.",
+    metrics: ["+400% Sales", "100k+ Reach"],
+    image: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=1326&auto=format&fit=crop"
+  },
+  {
+    title: "Optimización SEO Brandlima",
+    category: "SEO Técnico",
+    description: "Posicionamiento de keywords estratégicas para diversos sectores B2B y B2C.",
+    metrics: ["10+ Keywords Top 1", "+200% Organic"],
+    image: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?q=80&w=1374&auto=format&fit=crop"
+  }
+];
+---
+
+<BaseLayout 
+  title="Portfolio de Proyectos" 
+  description="Selección de proyectos destacados en SEO, Marketing Digital y Desarrollo Web con resultados medibles."
+>
+  <Navbar />
+  
+  <main class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <header class="mb-20 text-center">
+        <h1 class="text-4xl font-extrabold text-gray-900 mb-6">Casos de Éxito</h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Resultados comprobables que demuestran el impacto de una estrategia digital bien ejecutada.
+        </p>
+      </header>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        {projects.map(project => (
+          <ProjectCard {...project} />
+        ))}
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>

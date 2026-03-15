@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import ExperienceCard from '../components/ExperienceCard.astro';
+import SkillSection from '../components/SkillSection.astro';
+import personalData from '../data/personal.json';
+
+const { name, role, experience, skills } = personalData;
+---
+
+<BaseLayout 
+  title="Especialista SEO y Marketing Digital en Lima" 
+  description="Portfolio profesional de Juan Jose Gonzales Centurión. Especialista en SEO, Marketing Digital y Desarrollo Web (WordPress, WooCommerce, Bricks Builder)."
+>
+  <Navbar />
+  
+  <main>
+    <Hero name={name} role={role} />
+
+    <!-- Features/Metrics Section (Highlights) -->
+    <section class="py-12 bg-blue-600">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <p class="text-3xl font-extrabold text-white">+7 Años</p>
+            <p class="text-blue-100 text-sm uppercase tracking-wide mt-1">Experiencia</p>
+          </div>
+          <div>
+            <p class="text-3xl font-extrabold text-white">+400%</p>
+            <p class="text-blue-100 text-sm uppercase tracking-wide mt-1">Crecimiento Ventas</p>
+          </div>
+          <div>
+            <p class="text-3xl font-extrabold text-white">TOP 1</p>
+            <p class="text-blue-100 text-sm uppercase tracking-wide mt-1">Google Rankings</p>
+          </div>
+          <div>
+            <p class="text-3xl font-extrabold text-white">+15</p>
+            <p class="text-blue-100 text-sm uppercase tracking-wide mt-1">Sitios Desarrollados</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Preview -->
+    <section class="py-20 bg-gray-50" id="experiencia">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">Experiencia Profesional</h2>
+          <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+            Trayectoria enfocada en resultados accionables, optimización de conversiones y liderazgo de proyectos digitales 360º.
+          </p>
+        </div>
+        
+        <div class="space-y-4">
+          {experience.map(exp => (
+            <ExperienceCard {...exp} />
+          ))}
+        </div>
+        
+        <div class="mt-12 text-center">
+          <a href="/experiencia" class="inline-flex items-center text-blue-600 font-bold hover:underline">
+            Ver experiencia detallada
+            <svg class="ml-1 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-20 bg-white" id="habilidades">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">Habilidades Tècnicas</h2>
+          <p class="mt-4 text-gray-600">Dominio de herramientas líderes en la industria para el éxito digital.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {Object.entries(skills).map(([category, items]) => (
+            <SkillSection title={category} skills={items} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-blue-900 rounded-3xl p-12 text-center relative overflow-hidden">
+          <div class="relative z-10">
+            <h2 class="text-3xl font-bold text-white mb-6">¿Listo para escalar tu presencia digital?</h2>
+            <p class="text-blue-100 mb-10 max-w-2xl mx-auto">
+              Hablemos sobre cómo mis habilidades en SEO, Marketing y Desarrollo pueden ayudar a tu negocio a alcanzar sus objetivos de facturación y visibilidad.
+            </p>
+            <a href="/contacto" class="inline-flex items-center px-8 py-4 bg-white text-blue-900 font-bold rounded-xl hover:bg-gray-100 transition-colors shadow-xl">
+              Iniciar una consulta
+            </a>
+          </div>
+          <!-- Decorative circle -->
+          <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-blue-800 rounded-full opacity-50"></div>
+          <div class="absolute -top-24 -right-24 w-64 h-64 bg-blue-700 rounded-full opacity-50"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

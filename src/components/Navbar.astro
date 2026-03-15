@@ -1,0 +1,45 @@
+---
+const navItems = [
+  { name: 'Inicio', href: '/' },
+  { name: 'Sobre Mí', href: '/sobre-mi' },
+  { name: 'Experiencia', href: '/experiencia' },
+  { name: 'Habilidades', href: '/habilidades-servicios' },
+  { name: 'Portfolio', href: '/portfolio' },
+  { name: 'Contacto', href: '/contacto' },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex-shrink-0 flex items-center">
+        <a href="/" class="text-xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+          JJGC
+        </a>
+      </div>
+      
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-8">
+        {navItems.map(item => (
+          <a 
+            href={item.href} 
+            class="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+          >
+            {item.name}
+          </a>
+        ))}
+      </nav>
+
+      <!-- Mobile Menu Button (placeholder/logic) -->
+      <div class="md:hidden flex items-center">
+        <button type="button" class="text-gray-500 hover:text-gray-600 focus:outline-none" aria-label="Toggle menu">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="h-16"></div> <!-- Spacer for fixed header -->

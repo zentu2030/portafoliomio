@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import personalData from '../data/personal.json';
+
+const { name, education } = personalData;
+---
+
+<BaseLayout 
+  title="Sobre Mí" 
+  description="Biografía profesional de Juan Jose Gonzales Centurión, especialista en SEO, Marketing Digital 360 y optimización de Core Web Vitals."
+>
+  <Navbar />
+  
+  <main class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <header class="mb-16">
+        <h1 class="text-4xl font-extrabold text-gray-900 mb-6 underline decoration-blue-500 decoration-4 underline-offset-8">Sobre Mí</h1>
+        <p class="text-xl text-gray-600 leading-relaxed">
+          Hola, soy <span class="text-blue-600 font-bold">{name}</span>. Estratega SEO y Marketing Digital con pasión por convertir datos en resultados de negocio tangibles.
+        </p>
+      </header>
+
+      <div class="prose prose-blue lg:prose-lg text-gray-600 max-w-none">
+        <p>
+          Con más de 7 años de experiencia en el sector digital, me he especializado en el ecosistema de marketing 360°, desde la planificación estratégica de pauta hasta la optimización técnica de sitios web para motores de búsqueda (SEO).
+        </p>
+        
+        <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6">Mi Enfoque</h2>
+        <p>
+          Creo firmemente que una web no solo debe verse bien, sino que debe ser una herramienta de ventas eficiente. Por ello, combino el desarrollo en WordPress (Bricks, Elementor, WooCommerce) con una sólida base de SEO técnico y análisis de datos (GA4, GTM, Power BI).Mi objetivo principal es siempre el mismo: **maximizar el retorno de inversión (ROI) y mejorar la visibilidad orgánica.**
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-12 mb-6">Especialización en Core Web Vitals</h2>
+        <p>
+          En los últimos años, me he centrado en la optimización de la experiencia de usuario y el rendimiento web, logrando tiempos de carga LCP menores a 1.5s y una estabilidad visual (CLS) cercana a cero. Entiendo que la velocidad es un factor crítico tanto para Google como para la retención de usuarios.
+        </p>
+      </div>
+
+      <div class="mt-20">
+        <h2 class="text-2xl font-bold text-gray-900 mb-8 border-b border-gray-200 pb-4 flex items-center">
+          <svg class="h-6 w-6 text-blue-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
+          </svg>
+          Educación y Certificaciones
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {education.map(edu => (
+            <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
+              <h3 class="font-bold text-gray-900">{edu.title}</h3>
+              <p class="text-sm text-gray-500">{edu.institution}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>

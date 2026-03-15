@@ -1,0 +1,73 @@
+{
+  "name": "Juan Jose Gonzales Centurión",
+  "role": "Digital Marketing & Web Specialist",
+  "email": "juan-1284@hotmail.com",
+  "phone": "+51 917 018 796",
+  "linkedin": "linkedin.com/in/juangonzalescenturion",
+  "behance": "behance.net/juangonzalesc",
+  "education": [
+    { "title": "Creación de nuevos negocios", "institution": "PUCP" },
+    { "title": "Ciencias de la comunicación", "institution": "UTP" },
+    { "title": "Marketing Digital", "institution": "Google" },
+    { "title": "Gestión Comercial y Ventas", "institution": "ISIL" },
+    { "title": "Inglés Avanzado", "institution": "ICPNA" },
+    { "title": "Desarrollo web", "institution": "Codecademy" },
+    { "title": "Costos Empresariales", "institution": "Cámara de Comercio de Lima" }
+  ],
+  "experience": [
+    {
+      "role": "Coordinador de Marketing",
+      "company": "Rauletti Pastelería",
+      "period": "Noviembre 2024 - Julio 2025",
+      "achievements": [
+        "Diseñé y ejecuté la estrategia de marketing digital 360º.",
+        "Gestioné presupuesto mensual y supervisé performance de campañas.",
+        "Lideré creación de contenido y redes sociales.",
+        "Lanzé la presencia digital de la filial Iquitos desde cero.",
+        "Incrementé la facturación del canal digital en +400%.",
+        "Cerré acuerdos comerciales con eventos, marcas e influencers."
+      ]
+    },
+    {
+      "role": "Especialista SEO y Web",
+      "company": "Brandlima",
+      "period": "Abril 2024 - Noviembre 2024",
+      "achievements": [
+        "Lideré gestión estratégica de 15+ cuentas clave.",
+        "Supervisé estrategia de contenido y pauta digital.",
+        "Desarrollé y ejecuté planes de marketing 360º.",
+        "Logré posicionamiento TOP 1 en Google para 10 keywords estratégicas.",
+        "Desarrollé +15 sitios web optimizados."
+      ]
+    },
+    {
+      "role": "Inbound Marketing",
+      "company": "Pisonay Inmobiliaria",
+      "period": "Mayo 2022 - Junio 2023",
+      "achievements": [
+        "Diseñé plan anual de marketing con presupuesto mensual.",
+        "Incrementé la captación de leads en +150% mediante optimización de landing pages.",
+        "Reduje el costo por lead (CPL) en 100%.",
+        "Implementé flujo de automatización en CRM."
+      ]
+    },
+    {
+      "role": "Marketing Manager",
+      "company": "Lovandi Joyería",
+      "period": "Junio 2023 - Abril 2024",
+      "achievements": [
+        "Lideré la construcción de marca desde cero.",
+        "Desarrollé e implementé sitio e-commerce WordPress + WooCommerce.",
+        "Diseñé y ejecuté estrategia de contenido orgánico y paid media."
+      ]
+    }
+  ],
+  "skills": {
+    "Paid Media": ["Google Ads", "Meta Ads Manager", "TikTok Ads"],
+    "Analítica": ["Google Analytics 4", "Tag Manager", "Power BI"],
+    "Desarrollo Web": ["WordPress", "WooCommerce", "Bricks Builder", "Elementor", "HTML/CSS"],
+    "SEO": ["Posicionamiento orgánico", "Keyword research", "Ahrefs", "Semrush"],
+    "IA & Automatización": ["ChatGPT", "Google Gemini"],
+    "CRM & Ventas": ["Gestión comercial", "Negociación"]
+  }
+}

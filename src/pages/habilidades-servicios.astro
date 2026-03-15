@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import SkillSection from '../components/SkillSection.astro';
+import personalData from '../data/personal.json';
+
+const { skills } = personalData;
+
+const services = [
+  {
+    title: "SEO Técnico & Estratégico",
+    desc: "Optimización on-page, auditorías técnicas, keyword research y mejora de Core Web Vitals para posicionar en los primeros resultados.",
+    icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+  },
+  {
+    title: "Marketing Digital 360°",
+    desc: "Gestión de campañas en Meta Ads, Google Ads y TikTok Ads con enfoque en ROI y captación de leads de calidad.",
+    icon: "M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"
+  },
+  {
+    title: "Desarrollo con WordPress",
+    desc: "Creación de sitios web robustos y de alta conversión usando Bricks Builder, Elementor y WooCommerce.",
+    icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+  }
+];
+---
+
+<BaseLayout 
+  title="Habilidades y Servicios" 
+  description="Servicios profesionales de SEO, Marketing Digital y Desarrollo Web. Listado completo de competencias técnicas."
+>
+  <Navbar />
+  
+  <main class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <header class="mb-20 text-center">
+        <h1 class="text-4xl font-extrabold text-gray-900 mb-6">Mis Competencias</h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Una combinación de estrategia técnica y creativa para impulsar el éxito de tu negocio.
+        </p>
+      </header>
+
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+        {services.map(service => (
+          <div class="p-8 rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-lg transition-all border-b-4 border-b-blue-600">
+            <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={service.icon} />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{service.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Detail Skills -->
+      <h2 class="text-2xl font-bold text-gray-900 mb-12 text-center">Stack Tecnológico</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {Object.entries(skills).map(([category, items]) => (
+          <SkillSection title={category} skills={items} />
+        ))}
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>
