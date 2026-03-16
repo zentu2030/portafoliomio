@@ -1,5 +1,7 @@
 ---
 const { name, role } = Astro.props;
+const currentImage = "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=687&auto=format&fit=crop";
+const hoverImage = "/blackio.jpg";
 ---
 
 <section class="relative overflow-hidden bg-white pt-24 pb-20 lg:pt-32 lg:pb-28">
@@ -23,17 +25,26 @@ const { name, role } = Astro.props;
         </div>
       </div>
       <div class="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-5 lg:flex lg:justify-end">
-        <div class="relative mx-auto w-full rounded-2xl shadow-2xl overflow-hidden lg:max-w-md aspect-square bg-gray-100 border-8 border-white">
-           <!-- Placeholder for generic photo as requested -->
+        <div class="relative mx-auto w-full rounded-2xl shadow-2xl overflow-hidden lg:max-w-md aspect-square bg-gray-100 border-8 border-white group cursor-pointer">
+           <!-- Base Image -->
            <img 
-            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=687&auto=format&fit=crop" 
+            src={currentImage} 
             alt={name}
-            class="w-full h-full object-cover"
+            class="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0"
             loading="eager"
             width="600"
             height="600"
            />
-           <div class="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
+           <!-- Hover Image -->
+           <img 
+            src={hoverImage} 
+            alt={`${name} - Hover`}
+            class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+            loading="lazy"
+            width="600"
+            height="600"
+           />
+           <div class="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent pointer-events-none"></div>
         </div>
       </div>
     </div>
